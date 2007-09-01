@@ -1,6 +1,6 @@
 %define realname Test-WWW-Mechanize-Catalyst
 %define name	perl-%{realname}
-%define version	0.38
+%define version	0.40
 %define release	%mkrel 1
 
 Summary:	Test::WWW::Mechanize for Catalyst
@@ -11,17 +11,12 @@ License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{realname}/
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Test/%{realname}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%else
-BuildRequires:	perl
-%endif
 BuildRequires:	perl(Catalyst) >= 5.00
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test::WWW::Mechanize) >= 1.04
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{release}
 
 %description
 Catalyst is an elegant MVC Web Application
@@ -35,15 +30,15 @@ testing of Catalyst applications without starting up a web server.
 %setup -q -n %{realname}-%{version}
 
 %build
-%__perl Build.PL installdirs=vendor
-./Build
+%__perl Makefile.PL installdirs=vendor
+%make
 
 %check
-./Build test
+make test
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-./Build install destdir=%{buildroot}
+rm -rf %{buildroot}
+%makeinstall_std
 
 %files
 %defattr(-,root,root)
