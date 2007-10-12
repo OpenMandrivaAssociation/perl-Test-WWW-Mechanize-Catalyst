@@ -1,6 +1,6 @@
 %define realname Test-WWW-Mechanize-Catalyst
 %define name	perl-%{realname}
-%define version	0.40
+%define version	0.41
 %define release	%mkrel 1
 
 Summary:	Test::WWW::Mechanize for Catalyst
