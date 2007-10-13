@@ -15,7 +15,7 @@ BuildRequires:	perl(Catalyst) >= 5.00
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test::WWW::Mechanize) >= 1.04
-BuildRequires:	perl(Test::Exceptions)
+BuildRequires:	perl(Test::Exception)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{release}
 
