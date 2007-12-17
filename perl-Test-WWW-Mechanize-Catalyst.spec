@@ -17,7 +17,6 @@ BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test::WWW::Mechanize) >= 1.04
 BuildRequires:	perl(Test::Exception)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{release}
 
 %description
 Catalyst is an elegant MVC Web Application
