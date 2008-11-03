@@ -1,7 +1,7 @@
 %define module Test-WWW-Mechanize-Catalyst
 %define name	perl-%{module}
-%define version	0.42
-%define release	%mkrel 4
+%define version	0.44
+%define release	%mkrel 1
 
 Summary:	Test::WWW::Mechanize for Catalyst
 Name:		%{name}
