@@ -1,16 +1,16 @@
-%define module Test-WWW-Mechanize-Catalyst
-%define name	perl-%{module}
-%define version	0.51
-%define release	%mkrel 1
+%define upstream_name    Test-WWW-Mechanize-Catalyst
+%define upstream_version 0.51
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Test::WWW::Mechanize for Catalyst
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Test/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(Catalyst) >= 5.00
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Moose)
@@ -19,7 +19,7 @@ BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Catalyst::Plugin::Session)
 BuildRequires:	perl(Catalyst::Plugin::Session::State::Cookie)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{release}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Catalyst is an elegant MVC Web Application
@@ -30,7 +30,7 @@ testing of Catalyst applications without starting up a web server.
 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL installdirs=vendor
@@ -51,4 +51,3 @@ rm -rf %{buildroot}
 %doc CHANGES README
 %{_mandir}/*/*
 %{perl_vendorlib}/Test
-
