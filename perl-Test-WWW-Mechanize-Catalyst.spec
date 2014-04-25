@@ -13,6 +13,8 @@ Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Test::utf8)
+BuildRequires: perl(Test::Pod)
 BuildRequires:	perl(Catalyst) >= 5.00
 BuildRequires:	perl(Catalyst::Plugin::Session)
 BuildRequires:	perl(Catalyst::Plugin::Session::State::Cookie)
