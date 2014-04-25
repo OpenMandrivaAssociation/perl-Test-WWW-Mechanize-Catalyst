@@ -1,2 +1,4 @@
+removed_sources:
+  Test-WWW-Mechanize-Catalyst-0.52.tar.gz: 48f2deb1a6c8620cbbd8bdce13450077a71924c6
 sources:
-  "Test-WWW-Mechanize-Catalyst-0.52.tar.gz": 48f2deb1a6c8620cbbd8bdce13450077a71924c6
+  Test-WWW-Mechanize-Catalyst-0.59.tar.gz: 37f074ef5f89143ddfe9bf55c46f9d531b9e7c4d
