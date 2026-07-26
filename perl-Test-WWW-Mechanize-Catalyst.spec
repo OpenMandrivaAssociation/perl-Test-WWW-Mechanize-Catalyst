@@ -1,15 +1,13 @@
 %define upstream_name    Test-WWW-Mechanize-Catalyst
-%define upstream_version 0.62
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.62
+Release:	2
 
 Summary:	Test::WWW::Mechanize for Catalyst
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://git.shadowcat.co.uk/catagits/Test-WWW-Mechanize-Catalyst
-Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/Test-WWW-Mechanize-Catalyst-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/Test-WWW-Mechanize-Catalyst-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -32,7 +30,7 @@ testing of Catalyst applications without starting up a web server.
 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL installdirs=vendor
@@ -57,9 +55,7 @@ perl Makefile.PL installdirs=vendor
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.510.0-1mdv2010.0
 + Revision: 406384
-- rebuild using %%perl_convert_version
-
-* Sun May 10 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.51-1mdv2010.0
+- rebuild using %0.62 Sun May 10 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.51-1mdv2010.0
 + Revision: 373949
 - update to new version 0.51
 
